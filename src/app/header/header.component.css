@@ -1,0 +1,22 @@
+.height-70 {
+  height: 70px;
+}
+.v-center {
+  display: inline-block;
+  margin: 20px 0px;
+}
+.blue-color {
+  color: #028fe1;
+}
+.gray-color {
+  color: #bcbcbc;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.border-bootom-gray {
+  border-bottom: 1px solid #ddd;
+}
+.header-top {
+  margin-left: 50px;
+}
