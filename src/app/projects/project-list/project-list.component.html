@@ -32,7 +32,7 @@
 
   <!-- button search -->
   <div class="col-lg-2 col-md-3 col-sm-6">
-    <button type="button" class="btn" id="btn-search">Search Project</button>
+    <button type="button" class="btn" id="btn-search" (click)="onSearchProject()">Search Project</button>
   </div>
 
   <!-- Link reset-search -->
@@ -66,7 +66,9 @@
       <td>{{ project.customer }}</td>
       <td>{{ project.startDate }}</td>
       <td>
-        <i id="icon-delete-project" class="glyphicon glyphicon-trash icon-delete"></i>
+        <i id="icon-delete-project" class="glyphicon glyphicon-trash icon-delete"
+           *ngIf="project.status === 'NEW'"
+          ></i>
       </td>
     </tr>
     <tr id="div-delete_multi">
