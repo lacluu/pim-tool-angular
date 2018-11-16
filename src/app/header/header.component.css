@@ -20,3 +20,10 @@
 .header-top {
   margin-left: 50px;
 }
+.container-fluid {
+  padding-right: 80px;
+  padding-left: 80px;
+  margin-right: auto;
+  margin-left: 50px;
+  margin-right: auto;
+}

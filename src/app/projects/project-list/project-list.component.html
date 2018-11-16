@@ -1,0 +1,101 @@
+<!-- Header content -->
+<div class="row">
+  <div class="col-md-11" id="div-content-top">
+    <h4 class="h4-cs">
+      <strong>
+        Projects List
+      </strong>
+    </h4>
+  </div>
+</div>
+
+<!-- Search-project -->
+<div class="row" id="div-search">
+  <div class="col-lg-4 col-md-4 col-sm-6 mt-3">
+    <div class="form-group">
+      <input id="searchName" name="searchName" value="" autofocus
+             placeholder="Project number, name, customer name" class="form-control input-sm"
+             data-bind="value: searchName"/>
+    </div>
+  </div>
+
+  <!-- select project status -->
+  <div class="col-lg-2 col-md-2 col-sm-6 mt-3" id="projectStatus">
+    <select id="searchStatus" name="searchStatus" class="form-control input-sm">
+      <option id="selectAll" selected value="">Project status</option>
+      <option value="FIN">Finished</option>
+      <option value="INP">In Progress</option>
+      <option value="NEW">New</option>
+      <option value="PLA">Planned</option>
+    </select>
+  </div>
+
+  <!-- button search -->
+  <div class="col-lg-2 col-md-3 col-sm-6">
+    <button type="button" class="btn" id="btn-search">Search Project</button>
+  </div>
+
+  <!-- Link reset-search -->
+  <div class="col-lg-4 col-md-3 col-sm-6">
+    <div class="link-reset-search">
+      <a href="#" data-bind="click: resetFormSearch">Reset Search</a>
+    </div>
+  </div>
+</div>
+
+<!-- table-project -->
+<table id="tblProject">
+  <thead>
+  <tr>
+    <th class="th-checkbox"></th>
+    <th class="th-project-number">Number</th>
+    <th class="th-project-name">Name</th>
+    <th class="th-project-status">Status</th>
+    <th class="th-project-customer">Customer</th>
+    <th class="th-start-date">Start Date</th>
+    <th class="th-delete">Delete</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let project of projects">
+      <td><input type="checkbox" class="checkboxDelete"/></td>
+      <td class="text-number"><a>{{ project.projectNumber }}</a></td>
+      <td>{{ project.name }}</td>
+      <td>{{ project.statusLabel }}</td>
+      <td>{{ project.customer }}</td>
+      <td>{{ project.startDate }}</td>
+      <td>
+        <i id="icon-delete-project" class="glyphicon glyphicon-trash icon-delete"></i>
+      </td>
+    </tr>
+    <tr id="div-delete_multi">
+      <td colspan="7">
+        <div class="row">
+          <div class="col-lg-8 col-md-8" id="div-left-bottom-table">
+            <span>2</span>
+            item
+            <span>s</span>
+            item
+          </div>
+
+          <div class="col-lg-4 col-md-4 text-right" id="div-right-bottom-table">
+            delete selected items
+            <i id="icon-delete-projects" class="glyphicon glyphicon-trash icon-delete">
+            </i>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<nav id="navPaging">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>
